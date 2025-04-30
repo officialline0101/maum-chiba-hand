@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>スマホ画像ギャラリー</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/css/glide.core.min.css" />
+  <style>
+    body {
+      margin: 0;
+      background-color: #fefefe;
+      font-family: 'Helvetica Neue', sans-serif;
+      color: #333;
+    }
+
+    header {
+      background: #00aaff;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .glide {
+      width: 100%;
+      max-width: 600px;
+      margin: 30px auto;
+    }
+
+    .glide__slide img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      cursor: zoom-in;
+      transition: transform 0.2s ease;
+    }
+
+    .glide__slide img:active {
+      transform: scale(1.05);
+    }
+
+    .caption {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin-top: 8px;
+    }
+
+    .loader {
+      border: 5px solid #f3f3f3;
+      border-top: 5px solid #00aaff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 100px auto;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>画像ギャラリー</header>
+
+<div id="loader" class="loader"></div>
+
+<div class="glide hidden" id="gallery">
+  <div class="glide__track" data-glide-el="track">
+    <ul class="glide__slides">
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/ifloiqg4ifeuxb38ld9pa/39.jpg?rlkey=6lhco38z83c280vhdr03vtpz3&st=tdk3l7si&raw=1" alt="画像1">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/46xlq9rd0rrraiwytx4qw/40.jpg?rlkey=gyclg8eupyvnttif06ej001zt&st=k0hd5b0j&raw=1" alt="画像2">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/zh9a1tk2jaybx5vcxh8il/41.jpg?rlkey=f5qc6r6teic1umachnfy14lgq&st=0u4u2tvr&raw=1" alt="画像3">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/0okyug2mycfez4ogamvzy/42.jpg?rlkey=nq2z533ntz2r5aywfdhxu9phe&st=egogzwpf&raw=1" alt="画像4">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/frwkfdq9znzppb0kfjkcs/43.jpg?rlkey=i2t6ggmpw0ajwm0pdqm1gjbxz&st=qnbqa57z&raw=1" alt="画像5">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/rxrb5o1dqa73461a7kf2e/44.jpg?rlkey=jlawdbintc1y3obr6g2mln2tc&st=a6dxs4t6&raw=1" alt="画像6">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/4fkyyccz62sgcgsf1f5sy/45.jpg?rlkey=eggvrh5g9mcoaug4muyw9n3pe&st=9oivj5nu&raw=1" alt="画像7">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/6c7f0zevp8566bmtkvphh/46.jpg?rlkey=3majypc7gedjwsi90kvzwwowm&st=6xojs54k&raw=1" alt="画像9">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/bwkqxy0en09m8w0ytkhpf/47.jpg?rlkey=uawgffc6pm5sc3g6cipkv4rnv&st=tomu6f88&raw=1" alt="画像10">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/3jdsnsvy3b9eqrfp1mbfi/48.jpg?rlkey=nojf10hvoocwm1lu394l29og3&st=gsjdqoyn&raw=1" alt="画像11">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/drj8vq0lqzhofbqtlpdx4/49.jpg?rlkey=9blry6wp3xsrs3dvfi8twuyen&st=zojunc5t&raw=1" alt="画像12">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/4qdcijzcdxe04akwd128t/50.jpg?rlkey=c6cmu2omjjnaqwd9ltwg44mrt&st=aisti6lg&raw=1" alt="画像13">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/fjawo5sd93930ht1t2z28/51.jpg?rlkey=zx4o7l7nms0zdn9wmln13p7v9&st=fn1m70qs&raw=1" alt="画像14">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/2x71wvfroqt6ggybikfk6/52.jpg?rlkey=ogotz5z2a9u8qtvmf9ntfkpvt&st=20b9z46m&raw=1" alt="画像15">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/4j1osopwfgxgc49fef901/53.jpg?rlkey=nfgf2vxpjgch6ces4xxlf92vs&st=ze53oac2&raw=1" alt="画像8">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/64x2e6xsgb80fd6zxsuji/54.jpg?rlkey=5686ocv2sj5i2tviq024ccnmp&st=4fzhrd6y&raw=1" alt="画像16">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/0vmo414qgq14oyn0bsow7/55.jpg?rlkey=q46fgtcl5axhpyzi4f5wbrpew&st=u91it53m&raw=1" alt="画像17">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/eehmuclh5i4w5ea97jfto/56.jpg?rlkey=by90yu0jrr4gd8f5ykygvfq5f&st=5azt0s75&raw=1" alt="画像18">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/os3k8y3l3rtwbgtm00rz2/57.jpg?rlkey=d4zjcjhe85stau4w8y4e7h0u1&st=iyba4oke&raw=1" alt="画像19">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/4c1s604rcjfnl7ug5w88w/58.jpg?rlkey=b6sv5k6kf0rk3iakyo5cr7k5a&st=dzxcn1jx&raw=1" alt="画像20">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/udqaa9js9tf3q7m23opxy/59.jpg?rlkey=nykfk17lclg2wyr82kmow33zz&st=un4f2yet&raw=1" alt="画像21">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/fifykak39gqyf0zeqp3qq/60.jpg?rlkey=4jgzcbisnyomvlbdpxwcd2dnd&st=q8x3uwt7&raw=1" alt="画像22">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/ahdc31j1n348iakzpdifo/61.jpg?rlkey=yyqk0zxexwnqpw5kng1ip7auu&st=8bkr89dz&raw=1" alt="画像23">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/i3gb5mxg06e0pirzbc1su/62.jpg?rlkey=6f6huk8x06olzpy7yufnazthd&st=ql3ydz76&raw=1" alt="画像24">
+        <div class="caption"></div>
+      </li>
+      <li class="glide__slide">
+        <img src="https://www.dropbox.com/scl/fi/ranz7gb1miwqmx47zeu0n/63.jpg?rlkey=phzmb1165iqdaw76uzeqhfkty&st=8ooujicd&raw=1" alt="画像25">
+        <div class="caption"></div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Glide.js/3.6.0/glide.min.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    // ローディング解除と表示
+    const loader = document.getElementById("loader");
+    const gallery = document.getElementById("gallery");
+
+    // 画像すべて読み込み完了したら表示
+    const images = document.querySelectorAll("img");
+    let loadedCount = 0;
+    images.forEach(img => {
+      img.onload = () => {
+        loadedCount++;
+        if (loadedCount === images.length) {
+          loader.classList.add("hidden");
+          gallery.classList.remove("hidden");
+          new Glide('.glide', {
+            type: 'carousel',
+            perView: 1
+          }).mount();
+        }
+      };
+      img.onerror = () => {
+        img.src = "https://placehold.co/600x400?text=画像が読み込めません";
+      };
+    });
+  });
+</script>
+
+</body>
+</html>
